@@ -9,8 +9,12 @@
 
 WiFiMulti WiFiMulti;
 
-const char* ssid     = "Valar Morghulis"; // Your SSID (Name of your WiFi)
-const char* password = "valardohaeris"; //Your Wifi password
+//const char* ssid     = "dnet"; // Your SSID (Name of your WiFi)
+//const char* password = "48151623"; //Your Wifi password
+
+const char* ssid     = "Free WiFi Hodson Bay Hotel 3"; // Your SSID (Name of your WiFi)
+const char* password = ""; //Your Wifi password
+
 
 const char* host = "api.thingspeak.com";
 String api_key = "K3Y5WNN2D6BI72J1"; // Your API Key provied by thingspeak
@@ -143,8 +147,8 @@ void Send_Data()
     String data_to_send = api_key;
     data_to_send += "&field1=";
     data_to_send += String(value);
-    data_to_send += "&field2=";
-    data_to_send += String(temp);
+    //data_to_send += "&field2=";
+    //data_to_send += String(temp);
     // data_to_send += "&field3=";
     // data_to_send += String(pressure);
     data_to_send += "\r\n\r\n";

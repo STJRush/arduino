@@ -56,6 +56,8 @@ void loop() {
     // read packet
     while (LoRa.available()) {
       receivedText = (char)LoRa.read();
+      moisty=LoRa.read();
+      
       
       Serial.print(receivedText);
 
@@ -73,12 +75,20 @@ void loop() {
 
     // print RSSI of packet
     Serial.print("' with RSSI ");
+    Serial.println("Moisty is" + moisty);
     Serial.println(LoRa.packetRssi());
+    
+    
     u8x8.drawString(0, 5, "PacketRS");
     receivedRssi = LoRa.packetRssi();
+    
     char currentrs[64];
     receivedRssi.toCharArray(currentrs, 64);
     u8x8.drawString(9, 5, currentrs);
+
+    //char currenttx[32];
+    //receivedText.toCharArray(currenttx, 32);
+    //u8x8.drawString(0, 6, moisty);
   }
 
 }
